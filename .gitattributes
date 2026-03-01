@@ -12,5 +12,8 @@
 /phpstan.neon.dist  export-ignore
 /phpunit.xml.dist   export-ignore
 /wp-tests-config.php.dist export-ignore
+/e2e/               export-ignore
+/playwright.config.js export-ignore
+/package.json       export-ignore
 CHANGELOG.md        export-ignore
 CLAUDE.md           export-ignore

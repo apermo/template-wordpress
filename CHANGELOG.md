@@ -14,3 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - WordPress integration test infrastructure with multisite matrix
 - `wp-tests-config.php.dist` for CI test suite configuration
 - WP beta/RC nightly compatibility workflow
+- Playwright E2E test infrastructure with auth setup and example spec
+- E2E caller workflow (`e2e.yml`)
+- `WP_DB_IMPORT` support in `.ddev/.env` for database dump import
+
+### Changed
+
+- Integration test bootstrap auto-detects `vendor/wp-phpunit/wp-phpunit`
