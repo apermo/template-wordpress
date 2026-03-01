@@ -1,0 +1,7 @@
+parameters:
+    level: 6
+    paths:
+        - src
+        - plugin-name.php
+        - uninstall.php
+        - functions.php
