@@ -22,7 +22,7 @@ Both modes coexist in the repo. The `setup.sh` script (see #10) removes the irre
 
 - PSR-4 autoloading under `src/`
 - Coding standards: `apermo/apermo-coding-standards` (PHPCS)
-- Static analysis: `apermo/apermo-phpstan-wordpress-rules` + `szepeviktor/phpstan-wordpress`
+- Static analysis: `apermo/phpstan-wordpress-rules` + `szepeviktor/phpstan-wordpress`
 - Testing: PHPUnit + Brain Monkey + Yoast PHPUnit Polyfills
 - Test suites: `tests/Unit/` and `tests/Integration/`
 
@@ -45,7 +45,7 @@ ddev start && ddev orchestrate   # Full WordPress environment
 
 - Uses `apermo/ddev-orchestrate` addon
 - Project type is `php` (not `wordpress`), so WP-CLI uses a custom `ddev wp` command wrapper
-- Plugin mode: bind-mounts repo into `wp-content/mu-plugins/`
+- Plugin mode: bind-mounts repo into `wp-content/plugins/`
 - Theme mode: bind-mounts repo into `wp-content/themes/`
 
 ## Git Hooks
