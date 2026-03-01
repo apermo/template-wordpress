@@ -1,6 +1,7 @@
 /.ddev/             export-ignore
 /.editorconfig      export-ignore
 /.github/           export-ignore
+/.wordpress-org/    export-ignore
 /.githooks/         export-ignore
 /.gitattributes     export-ignore
 /.gitignore         export-ignore

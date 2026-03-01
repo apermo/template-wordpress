@@ -46,6 +46,9 @@ PS3="Select project mode: "
 select PROJECT_MODE in "plugin" "theme"; do
     [ -n "$PROJECT_MODE" ] && break
 done
+
+# WordPress.org publishing
+read -rp "Publish to WordPress.org? (y/N): " WPORG_PUBLISH
 echo ""
 
 # --- Derive placeholder values ---
@@ -152,11 +155,30 @@ else
     # Clean phpstan.neon.dist
     sedi "/- ${SLUG}.php/d" phpstan.neon.dist
     sedi '/- uninstall.php/d' phpstan.neon.dist
+
+    # Update readme.txt for theme mode
+    sedi 's|A WordPress plugin|A WordPress block theme|g' readme.txt
+    sedi "s|/wp-content/plugins/${SLUG}/|/wp-content/themes/${SLUG}/|" readme.txt
 fi
 
 # Remove both dist files
 rm -f .ddev/docker-compose.plugin.yaml.dist
 rm -f .ddev/docker-compose.theme.yaml.dist
+
+# --- WordPress.org publishing ---
+
+if [[ ! "$WPORG_PUBLISH" =~ ^[Yy]$ ]]; then
+    info "Removing WordPress.org deploy files..."
+    rm -f .github/workflows/wporg-deploy.yml
+    rm -f readme.txt
+    rm -rf .wordpress-org/
+else
+    info "WordPress.org deploy workflow retained."
+    info "Add SVN credentials as repository secrets:"
+    echo "  WPORG_SVN_USERNAME"
+    echo "  WPORG_SVN_PASSWORD"
+    echo ""
+fi
 
 # --- Configure repository via gh CLI ---
 
@@ -248,7 +270,7 @@ git config core.hooksPath .githooks
 info "Verifying no placeholders remain..."
 REMAINING=$(grep -r 'plugin-name\|Plugin_Name\|PLUGIN_NAME\|plugin_name' . \
     --include='*.php' --include='*.json' --include='*.xml' --include='*.neon' \
-    --include='*.css' --include='*.yaml' --include='*.yml' --include='*.html' \
+    --include='*.css' --include='*.yaml' --include='*.yml' --include='*.html' --include='*.txt' \
     -l 2>/dev/null | grep -v '.git/' | grep -v 'setup.sh' || true)
 
 if [ -n "$REMAINING" ]; then
