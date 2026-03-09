@@ -21,3 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Integration test bootstrap auto-detects `vendor/wp-phpunit/wp-phpunit`
+
+### Fixed
+
+- Workflow callers missing permissions (caused startup_failure)
