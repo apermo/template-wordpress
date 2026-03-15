@@ -21,6 +21,7 @@ This is a GitHub template repository for bootstrapping WordPress plugins and the
 - Translator comments (`/* translators: ... */`) are required before any translation function call that contains placeholders.
 - All output must be properly escaped using `esc_html()`, `esc_attr()`, `esc_url()`, `wp_kses_post()`, etc.
 - Use post-increment (`$i++`) over pre-increment (`++$i`).
+- In namespaced code, fully qualify PHP native functions (`\strlen()`, `\in_array()`) for performance. Do not fully qualify WordPress functions (`plugin_dir_path()`, `wp_remote_get()`) — it breaks mocking in unit tests.
 - Coding standards are enforced via PHPCS with the custom `Apermo` ruleset.
 - Static analysis via PHPStan at level 6.
 

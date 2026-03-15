@@ -36,7 +36,7 @@ class ExampleIntegrationTest extends WP_UnitTestCase {
 			);
 		} else {
 			$this->assertNotFalse(
-				\wp_get_theme()->get( 'Name' ),
+				wp_get_theme()->get( 'Name' ),
 				'Active theme should have a name.',
 			);
 		}

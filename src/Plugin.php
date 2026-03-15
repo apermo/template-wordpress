@@ -28,9 +28,9 @@ class Plugin {
 	public static function init( string $file ): void {
 		self::$file = $file;
 
-		\register_activation_hook( $file, [ self::class, 'activate' ] );
-		\register_deactivation_hook( $file, [ self::class, 'deactivate' ] );
-		\add_action( 'plugins_loaded', [ self::class, 'boot' ] );
+		register_activation_hook( $file, [ self::class, 'activate' ] );
+		register_deactivation_hook( $file, [ self::class, 'deactivate' ] );
+		add_action( 'plugins_loaded', [ self::class, 'boot' ] );
 	}
 
 	/**
