@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.10.1] - 2026-05-24
 
-### Changed
+### Fixed
 
 - Bump PHPStan memory limit in `.lintstagedrc.js` from 512M to 1G. The
   previous default crashed pre-commit on derived projects with non-trivial
