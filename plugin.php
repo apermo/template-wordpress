@@ -17,7 +17,13 @@ namespace Plugin_Name;
 
 \defined( 'ABSPATH' ) || exit();
 
-if ( ! \file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+if ( \file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
+
+// Reached when neither a local vendor/autoload.php nor a parent project's
+// autoloader (Bedrock and similar) has registered the plugin's PSR-4 namespace.
+if ( ! \class_exists( Main::class ) ) {
 	add_action(
 		'admin_notices',
 		// phpcs:ignore Universal.FunctionDeclarations.NoLongClosures.ExceedsMaximum
@@ -37,7 +43,5 @@ if ( ! \file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	);
 	return;
 }
-
-require_once __DIR__ . '/vendor/autoload.php';
 
 Main::init( __FILE__ );

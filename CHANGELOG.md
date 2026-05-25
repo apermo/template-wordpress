@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.2] - 2026-05-25
+
+### Fixed
+
+- Bootstrap in `plugin.php` no longer false-positives the "Please run
+  `composer install`" notice when the plugin runs inside a
+  Composer-managed parent project (Bedrock and similar). The check now
+  loads the local autoloader if present, then verifies `Main` is
+  reachable (via either the local or the parent autoloader) before
+  showing the notice. See
+  [#45](https://github.com/apermo/template-wordpress/issues/45).
+
 ## [0.10.1] - 2026-05-24
 
 ### Fixed
@@ -186,6 +198,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Workflow callers missing permissions (caused startup_failure)
 
+[0.10.2]: https://github.com/apermo/template-wordpress/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/apermo/template-wordpress/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/apermo/template-wordpress/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/apermo/template-wordpress/compare/v0.8.0...v0.9.0
