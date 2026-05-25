@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.1] - 2026-05-24
+
+### Fixed
+
+- Bump PHPStan memory limit in `.lintstagedrc.js` from 512M to 1G. The
+  previous default crashed pre-commit on derived projects with non-trivial
+  codebases (observed in `apermo/advanced-revisions`). 1G matches what
+  derived projects had been using in their pre-husky `.githooks/pre-commit`
+  scripts.
+
 ## [0.10.0] - 2026-05-24
 
 ### Added
@@ -176,6 +186,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Workflow callers missing permissions (caused startup_failure)
 
+[0.10.1]: https://github.com/apermo/template-wordpress/compare/v0.10.0...v0.10.1
+[0.10.0]: https://github.com/apermo/template-wordpress/compare/v0.9.0...v0.10.0
+[0.9.0]: https://github.com/apermo/template-wordpress/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/apermo/template-wordpress/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/apermo/template-wordpress/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/apermo/template-wordpress/compare/v0.6.0...v0.6.1
