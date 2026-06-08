@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.3] - 2026-07-17
+
+### Changed
+
+- Bump `actions/checkout` from v4 to v5 in `integration.yml` for Node 24
+  compatibility. GitHub forces JavaScript actions off Node 20 starting
+  2026-06-16.
+
+### Removed
+
+- `.gemini/config.yaml` and `.gemini/styleguide.md`. Gemini Code Assist for
+  Individuals sunsets on 2026-07-17, after which the config is inert.
+  Removing it stops newly created repos from inheriting a dead config.
+
 ## [0.10.2] - 2026-05-25
 
 ### Fixed
@@ -198,6 +212,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Workflow callers missing permissions (caused startup_failure)
 
+[0.10.3]: https://github.com/apermo/template-wordpress/compare/v0.10.2...v0.10.3
 [0.10.2]: https://github.com/apermo/template-wordpress/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/apermo/template-wordpress/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/apermo/template-wordpress/compare/v0.9.0...v0.10.0
