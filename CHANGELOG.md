@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.10.3] - 2026-07-17
 
+### Changed
+
+- Bump `actions/checkout` from v4 to v5 in `integration.yml` for Node 24
+  compatibility. GitHub forces JavaScript actions off Node 20 starting
+  2026-06-16.
+
 ### Removed
 
 - `.gemini/config.yaml` and `.gemini/styleguide.md`. Gemini Code Assist for
