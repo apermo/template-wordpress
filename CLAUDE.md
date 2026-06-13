@@ -62,7 +62,7 @@ ddev start && ddev orchestrate   # Full WordPress environment
 Pre-commit hook runs PHPCS (on staged files) and PHPStan (whole project) via
 [husky](https://typicode.github.io/husky/) and [lint-staged](https://github.com/lint-staged/lint-staged).
 A `commit-msg` hook additionally enforces the conventional-commit prefix and
-72-char subject cap locally, mirroring the `pr-validation.yml` workflow (whose
+50-char subject cap locally, mirroring the `pr-validation.yml` workflow (whose
 rules live in `apermo/reusable-workflows`'s
 `reusable-conventional-commits.yml`) — keep `ALLOWED`/`MAX` in
 `.husky/commit-msg` in sync with that workflow if its defaults ever change.
