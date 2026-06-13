@@ -3,7 +3,7 @@
 # (also referenced from .github/workflows/pr-validation.yml).
 
 ALLOWED='feat|fix|docs|style|refactor|test|chore|perf|ci|build'
-MAX=72
+MAX=50
 MSG=$(head -n1 "$1")
 
 # Skip messages git itself generates.
