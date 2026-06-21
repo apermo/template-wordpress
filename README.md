@@ -61,6 +61,12 @@ validates the conventional-commit format locally so invalid messages are
 rejected at `git commit` time, matching the `pr-validation` CI workflow.
 No manual configuration required.
 
+## Translations
+
+Optional, opt-in self-hosted translation delivery. Wire a plugin or theme up to a self-hosted GlotPress server (via
+`wearerequired/traduttore-registry`) so any install receives translations at runtime. See
+[docs/traduttore-registry.md](docs/traduttore-registry.md) for the copy-paste scaffold.
+
 ## Template Sync
 
 To pull upstream template changes into a derived project:
