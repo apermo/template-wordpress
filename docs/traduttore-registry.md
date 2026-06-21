@@ -43,8 +43,10 @@ A site without the registry simply falls back to whatever translations are alrea
 Pick the variant that matches your mode. Both register the project against the GlotPress translations API. The trailing
 slash on the API URL is **significant** — the bare `/api/translations/` path returns a 404.
 
-Replace `<translate-host>` with your GlotPress host (apermo's instance is `translate.chrdm.de`). The slug, namespace,
-and text domain below use this template's placeholders, so `setup.sh` substitutes them per project automatically.
+Replace `<translate-host>` with your GlotPress host (apermo's instance is `translate.chrdm.de`). The slug and text
+domain below use this template's placeholders, so `setup.sh` substitutes them per project automatically. Adjust the
+`namespace` line to your project's own namespace — in a Markdown file `setup.sh` only rewrites the placeholder to its
+underscore form, not the backslashed namespace your PHP actually uses.
 
 ### Plugin variant
 
@@ -65,7 +67,7 @@ use function Required\Traduttore_Registry\add_project;
  * Registers the plugin with the self-hosted Traduttore Registry so installs
  * receive translations from the GlotPress server.
  *
- * PHP translations are loaded just-in-time by WordPress 7.0+, so no manual
+ * PHP translations are loaded just-in-time by WordPress 6.4+, so no manual
  * `load_plugin_textdomain()` call is needed; this class only points WordPress
  * at the translation source.
  */
@@ -184,7 +186,7 @@ public static function init(): void {
 
 A few things make the catalog actually load and stay reproducible:
 
-- **JIT loading.** On WordPress 7.0+ PHP strings load just-in-time, so you do **not** need a manual
+- **JIT loading.** On WordPress 6.4+ PHP strings load just-in-time, so you do **not** need a manual
   `load_plugin_textdomain()` / `load_theme_textdomain()` call. The `I18n` class above is the whole wiring.
 - **`Domain Path` header.** Add `Domain Path: /languages` to the plugin header (next to `Text Domain`) so WordPress
   knows where bundled catalogs live. The template's `plugin.php` already ships this header.
