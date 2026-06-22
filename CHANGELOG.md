@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 2026-06-22
+
+### Added
+
+- Opt-in Traduttore Registry scaffolding in `docs/traduttore-registry.md`,
+  with copy-paste plugin and theme `src/I18n.php` variants for delivering
+  self-hosted GlotPress translations at runtime, plus a README pointer. The
+  dependency stays opt-in — it is not added to `composer.json`.
+
 ## [0.10.4] - 2026-06-13
 
 ### Fixed
@@ -222,6 +231,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Workflow callers missing permissions (caused startup_failure)
 
+[0.11.0]: https://github.com/apermo/template-wordpress/compare/v0.10.4...v0.11.0
 [0.10.4]: https://github.com/apermo/template-wordpress/compare/v0.10.3...v0.10.4
 [0.10.3]: https://github.com/apermo/template-wordpress/compare/v0.10.2...v0.10.3
 [0.10.2]: https://github.com/apermo/template-wordpress/compare/v0.10.1...v0.10.2
