@@ -140,7 +140,10 @@ if [ "$PROJECT_MODE" = "plugin" ]; then
     rm -rf templates/ parts/ assets/
 
     # Remove theme-only Lighthouse CI scaffolding
-    rm -f .github/workflows/lhci.yml .lighthouserc.js .wp-env.json
+    rm -f .github/workflows/lhci.yml .lighthouserc.js
+
+    # wp-env drives e2e.yml in both modes, so keep it and remap it to the plugin
+    sedi 's|"themes"|"plugins"|' .wp-env.json
 
     # Clean phpstan.neon.dist
     sedi '/- functions.php/d' phpstan.neon.dist

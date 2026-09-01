@@ -14,8 +14,11 @@
 /phpunit.xml.dist   export-ignore
 /wp-tests-config.php.dist export-ignore
 /e2e/               export-ignore
+/docs/              export-ignore
 /playwright.config.js export-ignore
 /package.json       export-ignore
+/package-lock.json  export-ignore
+/codecov.yml        export-ignore
 /.lighthouserc.js   export-ignore
 /.wp-env.json       export-ignore
 CHANGELOG.md        export-ignore
