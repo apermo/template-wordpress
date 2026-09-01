@@ -15,8 +15,8 @@ GitHub template repository for bootstrapping WordPress plugins and themes. Ships
 Both modes coexist in the repo. The `setup.sh` script (see #10) removes the irrelevant set after the developer picks a mode.
 
 **Plugin mode files:** `plugin.php` (main file), `src/Main.php`, `uninstall.php`, `.github/workflows/plugin-check.yml` (dropped if WP.org publishing is declined), `src/Admin/DeactivationFlow.php` + `src/Admin/views/confirm-deactivate.php` (optional, dropped if declined in setup)
-**Theme mode files:** `style.css`, `functions.php`, `src/Theme.php`, `templates/`, `parts/`, `assets/`, `.github/workflows/lhci.yml`, `.lighthouserc.js`, `.wp-env.json`
-**Shared:** `src/` (PSR-4 root), `tests/`, `e2e/` (incl. `helpers/a11y.js` + `a11y.spec.js`), `composer.json`, CI config, DDEV config
+**Theme mode files:** `style.css`, `functions.php`, `src/Theme.php`, `templates/`, `parts/`, `assets/`, `.github/workflows/lhci.yml`, `.lighthouserc.js`
+**Shared:** `src/` (PSR-4 root), `tests/`, `e2e/` (incl. `helpers/a11y.js` + `a11y.spec.js`), `.wp-env.json` (`setup.sh` remaps its `themes`/`plugins` key to the chosen mode — `e2e.yml` fails without it), `composer.json`, CI config, DDEV config
 
 ### Key conventions
 
