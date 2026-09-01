@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Fixed
+
+- Keep `.wp-env.json` in plugin mode. `setup.sh` deleted it as a theme-only
+  file, but `e2e.yml` runs in both modes and hard-fails with `Missing
+  .wp-env.json in repository root`, so every scaffolded plugin had a red E2E
+  job from its first push. The file is now retained and its `themes` key
+  remapped to `plugins`.
+- Exclude `codecov.yml`, `package-lock.json` and `docs/` from the export
+  archive. None of them belong in a distributed plugin or theme.
+
 ## [0.11.0] - 2026-06-22
 
 ### Added
